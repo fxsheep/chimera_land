@@ -20,8 +20,8 @@ config ANDROID_BINDER_IPC
 	  between said processes.
 
 config ANDROID_BINDER_IPC_32BIT
-	bool
-	depends on !64BIT && ANDROID_BINDER_IPC
+	bool "32bit Binder"
+	depends on ANDROID_BINDER_IPC
 	default y
 	---help---
 	  The Binder API has been changed to support both 32 and 64bit
@@ -29,6 +29,7 @@ config ANDROID_BINDER_IPC_32BIT
 
 	  Enable this to support an old 32-bit Android user-space (v4.4 and
 	  earlier).
+          Enable this if you want a 32bit userspace Android with a 64bit kernel.
 
 	  Note that enabling this will break newer Android user-space.
 
